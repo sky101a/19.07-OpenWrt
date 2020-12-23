@@ -11,7 +11,7 @@ rm -rf package/lean/luci-theme-argon  #删除源码自带的argon主题，因为
 #
 
 # 修改openwrt登陆地址,把下面的192.168.3.1修改成你想要的就可以了，其他的不要动
-sed -i 's/192.168.1.1/192.168.3.1/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.31.190/g' package/base-files/files/bin/config_generate
 
 
 #内核版本是会随着源码更新而改变的，在Lienol/openwrt的源码查看最好，以X86机型为例，源码的target/linux/x86文件夹可以看到有几个内核版本，x86文件夹里Makefile就可以查看源码正在使用什么内核
@@ -20,13 +20,13 @@ sed -i 's/192.168.1.1/192.168.3.1/g' package/base-files/files/bin/config_generat
 
 
 #添加自定义插件链接（自己想要什么就github里面搜索然后添加）
-git clone -b 18.06 https://github.com/garypang13/luci-theme-edge package/luci-theme-edge  #主题-edge-动态登陆界面
+#git clone -b 18.06 https://github.com/garypang13/luci-theme-edge package/luci-theme-edge  #主题-edge-动态登陆界面
 git clone https://github.com/xiaoqingfengATGH/luci-theme-infinityfreedom package/luci-theme-infinityfreedom  #透明主题
 git clone -b master https://github.com/vernesong/OpenClash.git package/luci-app-openclash  #openclash出国软件
-git clone https://github.com/frainzy1477/luci-app-clash package/luci-app-clash  #clash出国软件
-git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverchan  #微信推送
-git clone -b lede https://github.com/pymumu/luci-app-smartdns.git package/luci-app-smartdns  #smartdns DNS加速
-git clone https://github.com/garypang13/luci-app-eqos package/luci-app-eqos  #内网IP限速工具
+#git clone https://github.com/frainzy1477/luci-app-clash package/luci-app-clash  #clash出国软件
+#git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverchan  #微信推送
+#git clone -b lede https://github.com/pymumu/luci-app-smartdns.git package/luci-app-smartdns  #smartdns DNS加速
+#git clone https://github.com/garypang13/luci-app-eqos package/luci-app-eqos  #内网IP限速工具
 
 
 #lede的ShadowSocksR Plus+出国软件（19.07源码自带passwall出国软件）
